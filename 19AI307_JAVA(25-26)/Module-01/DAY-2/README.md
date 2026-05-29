@@ -1,85 +1,73 @@
-# Ex.No:1(B) CONDITIONAL STATEMENT
+# Ex.No:2(B) METHODS
 
 ## QUESTION:
-In a haunted house, lights turn on or off based on the hour of entry:
+Write a class with one static method and one non-static method. Call both from the main() method.
 
-If the hour is even and between 2 and 6 (inclusive), lights flicker.
+When staticMethod() is called, it should print  "I am static".
 
-If the hour is odd and between 7 and 11, lights stay off.
+When nonStaticMethod() is called, it should print  "I am non-static"
 
-If the hour is 12, lights turn red.
+<img width="169" height="153" alt="image" src="https://github.com/user-attachments/assets/34d50995-5383-43f7-bbe8-2d0716447279" />
 
-Otherwise, the house is dark.
 
 
 ## AIM:
-To write a Java program that uses conditional statements to determine the state of lights in a haunted house based on the hour of entry.
+To create a Java class with one static method and one non-static method, and demonstrate calling both from the main() method.
+
 
 ## ALGORITHM :
-1. Start the program.
+1.	Start the program and define a class MyClass.
 
-2. Import the necessary package java.util.*.
+2. Create a static method staticMethod() that prints "I am static".
 
-3. Create a Scanner object to read the hour input from the user.
+3. Create a non-static method nonStaticMethod() that prints "I am non-static".
 
-4. Read the hour as an integer.
+4. In the main() method, call the static method directly using the class name.
 
-5. Check if the hour is even and between 2 and 6 (inclusive):
+5. Create an object of MyClass and call the non-static method using this object,        then stop the program.
 
-6. Display “Lights flicker”.
 
-7. Else if the hour is odd and between 7 and 11:
 
-8. Display “Lights stay off”.
 
-9. Else if the hour is 12:
-
-10. Display “Lights turn red”.
- 
-11. Display “The house is dark”.
-
-12. End the program.
 
 ## PROGRAM:
  ```
 /*
-Program to implement a conditional statement using Java
+Program to implement a Methods using Java
 Developed by: Vignesh M
 RegisterNumber: 212223240176
 */
 ```
 
-## Sourcecode.java:
+## SOURCE CODE:
+
 ```
-import java.util.*;
-public class Demo
-{
-    public static void main(String args[])
-    {
-        Scanner sc=new Scanner(System.in);
-        int a=sc.nextInt();
-       if (a >= 2 && a <= 6 && a % 2 == 0) {
-            System.out.println("Lights flicker");
-        } else if (a>= 7 && a <= 11 && a % 2 != 0) {
-            System.out.println("Lights off");
-        } else if (a == 12) {
-            System.out.println("Lights red");
-        } else {
-            System.out.println("Dark house");
-        }
+public class MyClass {
+    public static void staticMethod() {
+        System.out.println("I am static");
+    }
+    public void nonStaticMethod() {
+        System.out.println("I am non-static");
+    }
+
+    public static void main(String[] args) {
+        MyClass.staticMethod();
+        MyClass obj = new MyClass();
+        obj.nonStaticMethod();
     }
 }
 ```
 
+
+
+
+
 ## OUTPUT:
-<img width="486" height="294" alt="Screenshot 2025-11-14 101547" src="https://github.com/user-attachments/assets/a64529b4-061c-436d-8ea4-55157b6e41b9" />
 
-
-
+<img width="415" height="177" alt="image" src="https://github.com/user-attachments/assets/42d4690f-4107-4267-9fa7-b525104e3635" />
 
 
 ## RESULT:
-Thus, the Java program to implement conditional statements for the haunted house lighting system was successfully executed.
-
+The program successfully calls the static method to print “I am static” and the non-static method to print “I am non-static”.
 
 
