@@ -1,73 +1,25 @@
-# Ex.No:2(C) ACCESS SPECIFIERS
+# Ex.No:2(D) VARIABLE SCOPE AND CONSTRUCTOR
 
 ## QUESTION:
-Write a Java program to create a class called Smartphone with private instance variables brand, model, and storageCapacity. Provide public getter and setter methods to access and modify these variables. Add a method called increaseStorage() that takes an integer value and increases the storageCapacity by that value.
+Write a program to access a static variable using both class name and object.
 
-import java.util.Scanner;
-
-class Smartphone {
-    private String brand;
-    private String model;
-    private int storageCapacity;
-
-    
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getStorageCapacity() {
-        return storageCapacity;
-    }
-
-    
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public void setStorageCapacity(int storageCapacity) {
-        this.storageCapacity = storageCapacity;
-    }
-
-   
-    public void increaseStorage(int value) {
-        if (value > 0) {
-            this.storageCapacity += value;
-        }
-    }
-
-    
-    public void display() {
-        System.out.println("Brand: " + brand);
-        System.out.println("Model: " + model);
-        System.out.println("Updated Storage Capacity: " + storageCapacity + " GB");
-        System.out.println("------------------------------");
-    }
-}
-
-//continue your code here
-
+<img width="398" height="150" alt="image" src="https://github.com/user-attachments/assets/a94bfbdb-d244-4bc5-9009-f9317c705905" />
 
 ## AIM:
-To create a Smartphone class with private attributes and methods to access, modify, and increase storage.
+To write a Java program that demonstrates accessing a static variable using both the class name and an object of the class.
+
 
 
 ## ALGORITHM :
-1. Start the program and create a Smartphone class with private attributes brand,      model, and storageCapacity.
+1. Start the program and declare a static variable num inside the class prog.
 
-2. Provide getter and setter methods to access and modify the private attributes.
+2. In the main() method, read an integer value from the user and assign it to the       static variable num.
 
-3. Create a method increaseStorage(int value) to add the given value to                storageCapacity.
-4. In the main() method, read input from the user for brand, model, storage capacity, and the value to increase storage.
+3. Access and print the static variable using the class name (prog.num).
 
-5. Call the increaseStorage() and display() methods to update and show the           smartphone details, then stop the program.
+4. Create an object of the class (prog obj = new prog();) and access the static         variable using the object (obj.num).
+
+5. Stop the program after displaying the values.
 
 
 
@@ -76,83 +28,46 @@ To create a Smartphone class with private attributes and methods to access, modi
 ## PROGRAM:
  ```
 /*
-Program to implement a Access Specifiers using Java
+Program to implement a Variable scope and Constructor using Java
 Developed by: Vignesh M
 RegisterNumber: 212223240176
 */
 ```
 
 ## SOURCE CODE:
+
+
 ```
 import java.util.Scanner;
 
-class Smartphone {
-    private String brand;
-    private String model;
-    private int storageCapacity;
+class prog {
+    
+    static int num;
 
-    public String getBrand() {
-        return brand;
-    }
-    public String getModel() {
-        return model;
-    }
-    public int getStorageCapacity() {
-        return storageCapacity;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-    public void setModel(String model) {
-        this.model = model;
-    }
-    public void setStorageCapacity(int storageCapacity) {
-        this.storageCapacity = storageCapacity;
-    }
-
-    public void increaseStorage(int value) {
-        if (value > 0) {
-            this.storageCapacity += value;
-        }
-    }
-
-    public void display() {
-        System.out.println("Brand: " + brand);
-        System.out.println("Model: " + model);
-        System.out.println("Updated Storage Capacity: " + storageCapacity + " GB");
-        System.out.println("------------------------------");
-    }
-}
-
-public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Smartphone phone = new Smartphone();
-        phone.setBrand(sc.nextLine());
-        phone.setModel(sc.nextLine());
-        phone.setStorageCapacity(sc.nextInt());
+        num = sc.nextInt();
+        System.out.println("Accessing using class name: " + prog.num);
 
-        int increaseValue = sc.nextInt();
-        phone.increaseStorage(increaseValue);
-        phone.display();
+        prog obj = new prog();
+        System.out.println("Accessing using object: " + obj.num);
+
         sc.close();
     }
 }
+
 ```
-
-
 
 
 
 
 ## OUTPUT:
 
-<img width="1018" height="456" alt="image" src="https://github.com/user-attachments/assets/624767f6-c2f6-4988-9bbd-ef2b23acfef6" />
+<img width="797" height="299" alt="image" src="https://github.com/user-attachments/assets/cc80b0ff-cc27-468a-b2b4-78749a686014" />
 
 
 ## RESULT:
-The program updates and displays the smartphone details, including the increased storage.
+The program successfully shows that a static variable can be accessed directly via the class name and also through an object, producing the same value.
 
 
